@@ -1,0 +1,80 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing:border-box;
+}
+.filter-wrapper{
+    width: 100%;
+    height: 600px;
+    background-color: #ddd;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.filter-container{
+    max-width: 1000px;
+    height: 100%;
+    margin: auto;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.btn{
+    background-color: orange;
+    width: 200px;
+    height: 50px;
+    display: inline-block;
+    margin-top: 24px;
+    text-align: center;
+    line-height: 50px;
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+input[ type="radio"]{
+   display: none;
+}
+.active{
+    background-color: #ff0000;
+}
+.all,.audi,.food,.cities{
+    width: 100%;
+    height: 500px;
+    position: absolute;
+    top: 100px;
+    display: none;
+    overflow-y: auto;
+}
+.checkbtn1:checked ~ .all ,.checkbtn2:checked ~ .audi,.checkbtn3:checked ~ .food,.checkbtn4:checked ~ .cities{
+    display: block;
+    z-index: 100;
+    display: flex;
+    flex-wrap:wrap ;
+    justify-content: space-between;
+    column-gap: 8px;
+}
+@media only screen and (max-width: 800px){
+    .all,.audi,.food,.cities{
+        top: 210px;
+    } 
+}
+@media only screen and (max-width: 700px){
+    .all,.audi,.food,.cities{
+        top: 200px;
+        left: 10px;
+    } 
+}
+@media only screen and (max-width: 600px){
+    .all,.audi,.food,.cities{
+        top: 180px;
+        left: 10px;
+    } 
+    .img{
+        width: 250px;
+        height: 200px;
+    } 
+    .checkbtn1:checked ~ .all ,.checkbtn2:checked ~ .audi,.checkbtn3:checked ~ .food,.checkbtn4:checked ~ .cities{
+        gap: 20px;
+    } 
+} 
